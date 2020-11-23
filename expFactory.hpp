@@ -7,13 +7,7 @@
 #include "base.hpp"
 
 class expFactory(){
-private:
-	string userInput;
-	Base* root;
 public:
-	void createTree();
-	void infix();
-	expFactory();
-	expFactory(string s);
+Base* parse(char** input, int length);
 }
 
