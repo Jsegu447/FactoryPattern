@@ -20,6 +20,12 @@ for( int i = 1; i < length; i++ ){
 	}
 }
 
+int a = atoi(ops.top());
+op.pop();
+int b = atoi(ops.top());
+op.pop();
+
+
 
 
   
