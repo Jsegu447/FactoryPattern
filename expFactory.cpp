@@ -4,6 +4,10 @@
 Base* expFactory::parse(char** input, int length){
 vector<string> tree;
 
+if(length < 4){
+return nullptr;
+}
+
 for (int i = 1; i < length; i++){
 	tree.push_back(input[i]);
 }
