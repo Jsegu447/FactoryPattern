@@ -1,6 +1,6 @@
 #include "expFactory.hpp"
 #include <vector>
-
+#include <stdlib.h>
 Base* expFactory::parse(char** input, int length){
 vector<string> tree;
 
@@ -14,24 +14,28 @@ for (int i = 1; i < length; i++){
 
 //special case
 Base* lhs;
+  int a = stoi(tree.at(0));
+  int b = stoi(tree.at(2));
+  Base* l = new Op(a);
+  Base* r = new Op(b); 
 if(tree.at(1) == "+"){
-   Add* add = new Add(tree.at(0), tree.at(2);
+   Add* add = new Add(l,r);
    lhs = add;
 }
 else if(tree.at(1) == "-"){
-   Sub* sub = new Sub(tree.at(0), tree.at(2);
+   Sub* sub = new Sub(l,r);
    lhs = sub;
 }
 else if(tree.at(1) == "*"){
-   Mult* mult = new Mult(tree.at(0), tree.at(2);
+   Mult* mult = new Mult(l,r);
    lhs = mult;
 }
 else if(tree.at(1) == "/"){
-   Div* div = new Div(tree.at(0), tree.at(2);
+   Div* div = new Div(l,r);
    lhs = div;
 }
 else if(tree.at(1) == "**"){
-   Pow* pow = new Pow(tree.at(0), tree.at(2);
+   Pow* pow = new Pow(l,r);
    lhs = pow;
 }
 else{
@@ -42,49 +46,31 @@ else{
 
 tree.erase(tree.begin(), tree.begin()+3);
 
-while(tree.size!=0){
+while(tree.size()!=0){
+int c = stoi(tree.at(1));
+Base* r2 = new Op(c);
 if(tree.at(0) == "+"){
-   lhs = new Add(lhs, tree.at(1);
+   lhs = new Add(lhs,r2);
 }
 else if(tree.at(0) == "-"){
-   Sub* sub2 = new Sub(lhs, tree.at(1);
+   Sub* sub2 = new Sub(lhs,r2);
    lhs = sub2;
 }
 else if(tree.at(0) == "*"){
-   lhs = new Mult(lhs, tree.at(1);
+   lhs = new Mult(lhs,r2);
 }
 else if(tree.at(0) == "/"){
-   lhs = new Div(lhs, tree.at(1);
+   lhs = new Div(lhs,r2);
 }
 else if(tree.at(0) == "**"){
-   lhs = new Pow(lhs, tree.at(1);
+   lhs = new Pow(lhs,r2);
 }
 else{
   lhs = new Rand();
   //not sure how rand works
 }
-tree.erase(tree.begine(); tree.begin()+2);
+tree.erase(tree.begin(), tree.begin()+1);
 }
 
-
-"5" "+" "3"
-[0] [1]	[2]
-if (tree.at(1)){
-Add* add = new Add (tree.at(0), tree.at(2
---> ans = 8
-}
-for (int i = 0; i < 3; i++){
-tree.erase(tree.at(i)
-}
-
-
-int i= ans = 8
-
-for/while size!=0{
-operator = tree.at(0)
-if (tree.at(0) == '')
-sub* sub = sub(add, tree.at(1))
-for (i - 0; i < 2; i++){
-		tree.erase(tree.at(i))
-}
+return lhs;
 }
