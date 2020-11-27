@@ -69,7 +69,7 @@ else{
   lhs = new Rand();
   //not sure how rand works
 }
-tree.erase(tree.begin(), tree.begin()+1);
+tree.erase(tree.begin(), tree.begin()+2);
 }
 
 return lhs;
