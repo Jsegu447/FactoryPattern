@@ -6,8 +6,9 @@
 #include "pow.hpp"
 #include "base.hpp"
 
-class expFactory(){
+class expFactory{
 public:
+expFactory() {};
 Base* parse(char** input, int length);
-}
+};
 
