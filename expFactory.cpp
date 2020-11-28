@@ -14,10 +14,26 @@ for (int i = 1; i < length; i++){
 
 //special case
 Base* lhs;
-  int a = stoi(tree.at(0));
-  int b = stoi(tree.at(2));
-  Base* l = new Op(a);
-  Base* r = new Op(b); 
+    Base* r;
+    Base* l;
+    int a;
+    int b;
+    if(tree.at(0)=="%"){
+        l = new Rand();
+    }
+    else{
+        a = stoi(tree.at(0));
+        l = new Op(a);
+    }
+    
+    if(tree.at(2)=="%"){
+        r = new Rand();
+    }
+    else{
+        b = stoi(tree.at(2));
+        r = new Op(b);
+    }
+    
 if(tree.at(1) == "+"){
    Add* add = new Add(l,r);
    lhs = add;
@@ -38,17 +54,21 @@ else if(tree.at(1) == "**"){
    Pow* pow = new Pow(l,r);
    lhs = pow;
 }
-else{
-  Rand* rand = new Rand();
-  lhs = rand;
-  //not sure how rand works 
-}
+
 
 tree.erase(tree.begin(), tree.begin()+3);
 
 while(tree.size()!=0){
-int c = stoi(tree.at(1));
-Base* r2 = new Op(c);
+Base* r2;
+int c;
+if(tree.at(1) == "%"){
+	r2 = new Rand();
+}
+else{
+c = stoi(tree.at(1));
+r2 = new Op(c);
+}
+
 if(tree.at(0) == "+"){
    lhs = new Add(lhs,r2);
 }
@@ -65,10 +85,7 @@ else if(tree.at(0) == "/"){
 else if(tree.at(0) == "**"){
    lhs = new Pow(lhs,r2);
 }
-else{
-  lhs = new Rand();
-  //not sure how rand works
-}
+
 tree.erase(tree.begin(), tree.begin()+2);
 }
 

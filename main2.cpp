@@ -8,6 +8,12 @@ cout << "test start" << endl;
 cout << argc << endl;
 cout << "test end" << endl;
 Base* root = thing.parse(argv,argc);
-cout << root->stringify() << endl;
+ if(root != nullptr){
+    cout << root->stringify() << endl;
+    cout << root->evaluate() << endl;
+    }
+    else{
+        cout << "nothing to print" << endl;
+    }
 return 0;
 }
