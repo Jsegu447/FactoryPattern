@@ -5,7 +5,6 @@
 #include "rand.hpp"
 #include "pow.hpp"
 #include "base.hpp"
-
 class expFactory{
 public:
 expFactory() {};
