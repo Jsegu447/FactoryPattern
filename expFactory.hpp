@@ -5,9 +5,10 @@
 #include "rand.hpp"
 #include "pow.hpp"
 #include "base.hpp"
-
-class expFactory(){
+#include "op.hpp"
+class base;
+class expFactory {
 public:
 Base* parse(char** input, int length);
-}
+};
 

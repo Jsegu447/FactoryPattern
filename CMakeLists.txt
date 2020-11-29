@@ -9,8 +9,9 @@ ADD_EXECUTABLE(test
     unit_test.cpp
 )
 
-ADD_EXECUTABLE(lab
-    main.cpp
+ADD_EXECUTABLE(exp
+    expFactory.cpp
+    main2.cpp
 )
 
 TARGET_LINK_LIBRARIES(test gtest)
