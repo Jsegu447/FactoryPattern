@@ -59,6 +59,4 @@ TEST(FactoryTest, 2OperatorsErrorHandle){
    EXPECT_TRUE(factoryTest == nullptr);
 }
 
-
-
 #endif //_FACTORYTEST__
