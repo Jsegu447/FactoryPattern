@@ -35,8 +35,8 @@ return nullptr;
 Base* lhs;
     Base* r;
     Base* l;
-    int a;
-    int b;
+    double a;
+    double b;
     if(tree.at(0)=="%"){
         l = new Rand();
     }
@@ -79,7 +79,7 @@ tree.erase(tree.begin(), tree.begin()+3);
 
 while(tree.size()!=0){
 Base* r2;
-int c;
+double c;
 if(!(tree[0] == "*" || tree[0] == "/" || tree[0] == "-" || tree[0] == "**"|| tree[0] == "+")){
 cout << "Invalid Input" << endl;
 return nullptr;
