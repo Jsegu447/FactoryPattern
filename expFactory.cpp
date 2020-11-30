@@ -41,7 +41,7 @@ Base* lhs;
         l = new Rand();
     }
     else{
-        a = stoi(tree.at(0));
+        a = stod(tree.at(0));
         l = new Op(a);
     }
     
@@ -49,7 +49,7 @@ Base* lhs;
         r = new Rand();
     }
     else{
-        b = stoi(tree.at(2));
+        b = stod(tree.at(2));
         r = new Op(b);
     }
     
@@ -94,7 +94,7 @@ if(tree.at(1) == "%"){
 	r2 = new Rand();
 }
 else{
-c = stoi(tree.at(1));
+c = stod(tree.at(1));
 r2 = new Op(c);
 }
 
