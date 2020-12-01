@@ -21,11 +21,11 @@ TEST(FactoryTest, MultTest){
 }
 
 TEST(FactoryTest, bigSizeTest){
-   char* test[] = {"./calculator", "2", "+", "3", "*", "4"};
+   char* test[] = {"./calculator", "2", "+", "3", "*", "4", "-", "5","/","3"};
    expFactory* fact = new expFactory();
-   Base* factoryTest = fact->parse(test, 6);
+   Base* factoryTest = fact->parse(test, 10);
 	std::cout << factoryTest->stringify() << std::endl;
-   EXPECT_EQ(factoryTest->evaluate(), 20);
+   EXPECT_EQ(factoryTest->evaluate(), 5);
 }
 
 TEST(FactoryTest, SubTest){
